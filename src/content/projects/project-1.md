@@ -1,7 +1,9 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: 'Remindr - Desktop to-do app'
+description: A sleek desktop productivity app built with Electron, React, and Vite that has been instrumental to my growth as a front-end developer.
+projectDate: '2020-'
+publishDate: 'Sep 24 2024'
+isFeatured: true
 seo:
   image:
     src: '/project-1.jpg'
