@@ -96,7 +96,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: "Hey there! I'm David.",
-        subtitle: 'I love to design accessible UX.'
+        subtitle: "I'm passionate about accessible UX."
     },
     subscribe: {
         title: 'Subscribe to Dante Newsletter',

@@ -4,6 +4,7 @@ description: 'A ping pong game that puts a fresh spin on a classic game. In Pivo
 projectDate: '2019-2021'
 publishDate: 'Sep 24 2024'
 sideProject: true
+customLink: 'https://davidrios.itch.io/pivotpong'
 seo:
   image:
     src: '/project-2.jpg'

@@ -1,9 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import siteConfig from '../data/site-config';
+import { sortItemsByDateDesc } from '../utils/data-utils';
 import Button from './Button.astro';
+import { SideProjectCarousel } from './SideProjectCarousel.js';
 
 const hero = siteConfig.hero;
+
+const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+const sideProjects = projects.filter(({ data }) => data.sideProject);
 ---
 
 {
@@ -27,6 +33,14 @@ const hero = siteConfig.hero;
                     ))}
                 </div>
             )}
+            <div>
+                <h2 class="m-8 ml-0 text-xl font-serif italic sm:text-2xl">Side Projects</h2>
+                {
+                    sideProjects?.length > 0 && (
+                        <SideProjectCarousel projects={sideProjects} />
+                    )
+                }
+            </div>
         </section>
     )
 }
