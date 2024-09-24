@@ -29,7 +29,7 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
         setProjectIdx(getRandomProjectIdx());
     };
 
-    const [projectIdx, setProjectIdx] = useState(0);
+    const [projectIdx, setProjectIdx] = useState(getRandomProjectIdx());
     const TitleTag = headingLevel;
 
     const project = projects[projectIdx];
@@ -54,14 +54,14 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
             </a>
 
             <div className="flex justify-between mt-6">
-                <button onClick={previousProject} className="">
+                <button onClick={previousProject}>
                     <img src={ArrowLeftIcon.src} className="w-6 h-6" alt="Previous Project" />
                 </button>
                 <button onClick={randomizeProject} className="flex flex-col items-center gap-2">
                     <p>Randomize Project</p>
                     <img src={ShuffleIcon.src} className="w-6 h-6" alt="" />
                 </button>
-                <button onClick={nextProject} className="">
+                <button onClick={nextProject}>
                     <img src={ArrowRightIcon.src} className="w-6 h-6" alt="Next Project" />
                 </button>
             </div>

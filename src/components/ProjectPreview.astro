@@ -2,17 +2,19 @@
 import { type CollectionEntry } from 'astro:content';
 import ArrowRight from '../icons/ArrowRight.astro';
 
-type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
+type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3'; viewLinkOnSide?: boolean };
 
-const { project, class: className, headingLevel = 'h2' } = Astro.props;
+const { project, class: className, headingLevel = 'h2', viewLinkOnSide } = Astro.props;
 const { title, projectDate, description, customLink } = project.data;
 const TitleTag = headingLevel;
 
 const link = customLink ?? `/projects/${project.slug}/`;
 const linkTarget = customLink ? `_blank` : `_self`;
+
+const linkLayoutClasses = viewLinkOnSide ? 'gap-8': 'flex-col gap-4';
 ---
 
-<a class:list={['flex justify-between flex-col items-start gap-4 group', className]} href={link} target={linkTarget}>
+<a class:list={[`flex justify-between items-start gap-4 group ${linkLayoutClasses}`, className]} href={link} target={linkTarget}>
     <div class="grow">
         <TitleTag
             class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
