@@ -15,7 +15,7 @@ const sideProjects = projects.filter(({ data }) => data.sideProject);
     <h2 class="m-8 ml-0 text-xl font-serif italic sm:text-2xl">Side Projects</h2>
     {
         sideProjects?.length > 0 && (
-            <SideProjectCarousel projects={sideProjects} client:visible />
+            <SideProjectCarousel projects={sideProjects} client:load />
         )
     }
 </div>

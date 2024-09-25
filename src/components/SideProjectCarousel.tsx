@@ -26,10 +26,15 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
     };
 
     const randomizeProject = () => {
-        setProjectIdx(getRandomProjectIdx());
+        const randomprojectidx = getRandomProjectIdx();
+        console.log('[2] random project idx:', randomprojectidx, '; projects length:', projects.length);
+
+        setProjectIdx(randomprojectidx);
     };
 
-    const [projectIdx, setProjectIdx] = useState(getRandomProjectIdx());
+    const randomprojectidx = getRandomProjectIdx();
+    console.log('[1] random project idx:', randomprojectidx, '; projects length:', projects.length);
+    const [projectIdx, setProjectIdx] = useState(randomprojectidx);
     const TitleTag = headingLevel;
 
     const project = projects[projectIdx];
