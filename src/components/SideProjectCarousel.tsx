@@ -1,8 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
 import { useState } from 'react';
-import ArrowLeftIcon from '../icons/arrow-left.svg';
-import ArrowRightIcon from '../icons/arrow-right.svg';
-import ShuffleIcon from '../icons/shuffle.svg';
+import NavArrowLeft from '../icons/NavArrowLeft';
+import { NavArrowRight } from '../icons/NavArrowRight';
+import Shuffle from '../icons/Shuffle';
 
 interface SideProjectCarouselProps {
     projects: CollectionEntry<'projects'>[];
@@ -26,15 +26,10 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
     };
 
     const randomizeProject = () => {
-        const randomprojectidx = getRandomProjectIdx();
-        console.log('[2] random project idx:', randomprojectidx, '; projects length:', projects.length);
-
-        setProjectIdx(randomprojectidx);
+        setProjectIdx(getRandomProjectIdx());
     };
 
-    const randomprojectidx = getRandomProjectIdx();
-    console.log('[1] random project idx:', randomprojectidx, '; projects length:', projects.length);
-    const [projectIdx, setProjectIdx] = useState(randomprojectidx);
+    const [projectIdx, setProjectIdx] = useState(getRandomProjectIdx());
     const TitleTag = headingLevel;
 
     const project = projects[projectIdx];
@@ -54,20 +49,20 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
                 </div>
                 <div className="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
                     View Project
-                    <img src={ArrowRightIcon.src} className="ml-1 w-4 h-4" alt="Next Project" />
+                    <NavArrowRight className="w-5 h-5 fill-current" />
                 </div>
             </a>
 
             <div className="flex justify-between mt-6">
                 <button onClick={previousProject}>
-                    <img src={ArrowLeftIcon.src} className="w-6 h-6" alt="Previous Project" />
+                    <NavArrowLeft className="w-5 h-5 fill-current" />
                 </button>
                 <button onClick={randomizeProject} className="flex flex-col items-center gap-2">
                     <p>Randomize Project</p>
-                    <img src={ShuffleIcon.src} className="w-6 h-6" alt="" />
+                    <Shuffle className="w-6 h-6 fill-current" />
                 </button>
                 <button onClick={nextProject}>
-                    <img src={ArrowRightIcon.src} className="w-6 h-6" alt="Next Project" />
+                    <NavArrowRight className="w-5 h-5 fill-current" />
                 </button>
             </div>
         </div>
