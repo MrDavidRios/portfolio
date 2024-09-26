@@ -55,35 +55,16 @@ const siteConfig: SiteConfig = {
             text: 'Projects',
             href: '/projects'
         }
-        // {
-        //     text: 'Blog',
-        //     href: '/blog'
-        // },
-        // {
-        //     text: 'Tags',
-        //     href: '/tags'
-        // }
     ],
-    // headerNavLinks: [],
-    // footerNavLinks: [],
-    footerNavLinks: [
-        {
-            text: 'About',
-            href: '/about'
-        },
-        {
-            text: 'Contact',
-            href: '/contact'
-        }
-        // {
-        //     text: 'Terms',
-        //     href: '/terms'
-        // }
-    ],
+    footerNavLinks: [],
     socialLinks: [
         {
             text: 'GitHub',
             href: 'https://github.com/MrDavidRios'
+        },
+        {
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/drios03'
         },
         {
             text: 'itch.io',
