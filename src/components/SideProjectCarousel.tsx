@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import { useState } from 'react';
+import { type FC, useState } from 'react';
 import NavArrowLeft from '../icons/NavArrowLeft';
 import { NavArrowRight } from '../icons/NavArrowRight';
 import Shuffle from '../icons/Shuffle';
@@ -10,7 +10,7 @@ interface SideProjectCarouselProps {
     className?: string;
 }
 
-export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projects, headingLevel = 'h2', className = '' }) => {
+export const SideProjectCarousel: FC<SideProjectCarouselProps> = ({ projects, headingLevel = 'h2', className = '' }) => {
     const getRandomProjectIdx = () => {
         return Math.floor(Math.random() * projects.length);
     };
@@ -58,7 +58,7 @@ export const SideProjectCarousel: React.FC<SideProjectCarouselProps> = ({ projec
                     <NavArrowLeft className="w-5 h-5 fill-current" />
                 </button>
                 <button onClick={randomizeProject} className="flex flex-col items-center gap-2">
-                    <p>Randomize Project</p>
+                    <p>Randomize</p>
                     <Shuffle className="w-6 h-6 fill-current" />
                 </button>
                 <button onClick={nextProject}>
