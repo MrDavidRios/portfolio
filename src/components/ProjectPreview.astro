@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry } from 'astro:content';
 import ArrowRight from '../icons/ArrowRight.astro';
+import { OpenExternalLink } from '../icons/OpenExternalLink.tsx';
+import { ViewProjectLink } from './ViewProjectLink.tsx';
 
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3'; viewLinkOnSide?: boolean };
 
@@ -25,7 +27,5 @@ const linkLayoutClasses = viewLinkOnSide ? 'gap-8': 'flex-col gap-4';
     </br>
         {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
     </div>
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        View Project <ArrowRight class="fill-current w-4 h-4" />
-    </div>
+    <ViewProjectLink hasCustomLink={customLink !== undefined} />
 </a>

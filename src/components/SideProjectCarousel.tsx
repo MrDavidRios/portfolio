@@ -1,8 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { type FC, useState } from 'react';
-import NavArrowLeft from '../icons/NavArrowLeft';
+import { NavArrowLeft } from '../icons/NavArrowLeft';
 import { NavArrowRight } from '../icons/NavArrowRight';
-import Shuffle from '../icons/Shuffle';
+import { Shuffle } from '../icons/Shuffle';
+import { ViewProjectLink } from './ViewProjectLink.tsx';
 
 interface SideProjectCarouselProps {
     projects: CollectionEntry<'projects'>[];
@@ -47,10 +48,7 @@ export const SideProjectCarousel: FC<SideProjectCarouselProps> = ({ projects, he
                     {project.data.projectDate && <div className="text-sm leading-normal mt-1 italic">{project.data.projectDate}</div>}
                     {project.data.description && <div className="mt-1 text-sm leading-normal">{project.data.description}</div>}
                 </div>
-                <div className="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-                    View Project
-                    <NavArrowRight className="w-5 h-5 fill-current" />
-                </div>
+                <ViewProjectLink hasCustomLink={project.data.customLink !== undefined}/>
             </a>
 
             <div className="flex justify-between">

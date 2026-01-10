@@ -15,5 +15,3 @@ export const NavArrowRight: React.FC<React.SVGProps<SVGSVGElement>> = ({ classNa
         />
     </svg>
 );
-
-export default NavArrowRight;
