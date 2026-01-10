@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
 
-export type Props = HeadProps & { showHeader?: boolean };
+export type Props = HeadProps & { showHeader?: boolean; maxWidth?: string };
 
-const { showHeader = false, ...head } = Astro.props;
+const { showHeader = false, maxWidth = 'max-w-6xl', ...head } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ const { showHeader = false, ...head } = Astro.props;
         <div class="flex flex-col min-h-screen px-4 md:px-8">
             <Nav />
             {showHeader && <Header />}
-            <main class="grow w-full max-w-6xl mx-auto">
+            <main class={`grow w-full ${maxWidth} mx-auto`}>
                 <slot />
             </main>
             <Footer />

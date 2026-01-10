@@ -54,6 +54,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'Projects',
             href: '/projects'
+        },
+        {
+            text: 'Favorites',
+            href: '/favorites'
         }
     ],
     footerNavLinks: [],

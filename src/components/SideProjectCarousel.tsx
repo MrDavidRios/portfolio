@@ -53,7 +53,7 @@ export const SideProjectCarousel: FC<SideProjectCarouselProps> = ({ projects, he
                 </div>
             </a>
 
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-between">
                 <button onClick={previousProject}>
                     <NavArrowLeft className="w-5 h-5 fill-current" />
                 </button>

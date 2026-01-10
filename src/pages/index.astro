@@ -11,7 +11,7 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+<BaseLayout description={siteConfig.description} image={siteConfig.image} maxWidth='max-w-[1600px]'>
     <div class="grid md:grid-cols-2 md:gap-16">
         <Hero />
         <div class="flex flex-col-reverse md:flex-col">

@@ -11,7 +11,7 @@ const sideProjects = projects.filter(({ data }) => data.sideProject);
 
 ---
 
-<div class={hideOnMobile ? "hidden md:block" : 'md:hidden'}>
+<div class={`max-w-2xl ${hideOnMobile ? "hidden md:block" : 'md:hidden'}`}>
     <h2 class="m-8 ml-0 text-xl font-serif italic sm:text-2xl">Side Projects</h2>
     {
         sideProjects?.length > 0 && (
