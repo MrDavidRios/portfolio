@@ -24,8 +24,8 @@ const linkLayoutClasses = viewLinkOnSide ? 'gap-8': 'flex-col gap-4';
             {title}
         </TitleTag>
         {projectDate && <div class="text-sm leading-normal mt-1 italic">{projectDate}</div>}
-    </br>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
+    <br/>
+        {description && <div class="text-sm leading-normal">{description}</div>}
     </div>
     <ViewProjectLink hasCustomLink={customLink !== undefined} />
 </a>
