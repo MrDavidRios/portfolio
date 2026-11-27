@@ -35,7 +35,7 @@ export const SideProjectCarousel: FC<SideProjectCarouselProps> = ({ projects, he
 
     const project = projects[projectIdx];
 
-    const link = project.data.customLink ?? `/projects/${project.slug}/`;
+    const link = project.data.customLink ?? `/projects/${project.id}/`;
     const linkTarget = project.data.customLink ? `_blank` : `_self`;
 
     return (
@@ -48,7 +48,7 @@ export const SideProjectCarousel: FC<SideProjectCarouselProps> = ({ projects, he
                     {project.data.projectDate && <div className="text-sm leading-normal mt-1 italic">{project.data.projectDate}</div>}
                     {project.data.description && <div className="mt-1 text-sm leading-normal">{project.data.description}</div>}
                 </div>
-                <ViewProjectLink hasCustomLink={project.data.customLink !== undefined}/>
+                <ViewProjectLink hasCustomLink={project.data.customLink !== undefined} />
             </a>
 
             <div className="flex justify-between">

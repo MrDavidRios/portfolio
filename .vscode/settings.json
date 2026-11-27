@@ -1,27 +1,15 @@
 {
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 2
-    },
-    "[toml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 2
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.tabSize": 2
-    },
+    "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "class:list"
+    ],
+    // Deprecated name kept alongside js/ts.tsdk.path: the Astro extension
+    // still reads it (withastro/astro#16155)
     "typescript.tsdk": "node_modules/typescript/lib",
-    "files.associations": {
-        "*.css": "tailwindcss",
-    }
+    "js/ts.tsdk.path": "node_modules/typescript/lib",
+    "files.associations": { "*.css": "tailwindcss" }
 }
