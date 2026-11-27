@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     return tags.flatMap((tag) => {
         const filteredPosts = getPostsByTag(posts, tag.slug);
         return paginate(filteredPosts, {
-            params: { slug: tag.slug },
+            params: { id: tag.slug },
             pageSize: siteConfig.postsPerPage || 4
         });
     });
