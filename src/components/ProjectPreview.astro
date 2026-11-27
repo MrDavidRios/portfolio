@@ -10,7 +10,7 @@ const { project, class: className, headingLevel = 'h2', viewLinkOnSide } = Astro
 const { title, projectDate, description, customLink } = project.data;
 const TitleTag = headingLevel;
 
-const link = customLink ?? `/projects/${project.slug}/`;
+const link = customLink ?? `/projects/${project.id}/`;
 const linkTarget = customLink ? `_blank` : `_self`;
 
 const linkLayoutClasses = viewLinkOnSide ? 'gap-8': 'flex-col gap-4';
